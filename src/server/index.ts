@@ -46,6 +46,10 @@ const KEYWORD_REPLIES: { pattern: RegExp; reply: string | ((id: string) => strin
         reply: "He can hit a ball farther than any human being I've ever seen, Tom.",
     },
     {
+        pattern: /\bschwarbomb\b/i,
+        reply: "I knew I smelled a Schwarbomb, Tom.",
+    },
+    {
         pattern: /\b(trea|turner)\b/i,
         reply: "Fastest man in a Phillies uniform, Tom.",
     },
@@ -58,8 +62,8 @@ const KEYWORD_REPLIES: { pattern: RegExp; reply: string | ((id: string) => strin
         reply: "He's as cracked as he is jacked, Tom.",
     },
     {
-        pattern: /\b(ranger|suarez)\b/i,
-        reply: "Ranger Suarez is a gamer, Tom.",
+        pattern: /\b(sanchez|sanchy|cris)\b/i,
+        reply: "He's old school, Tom. Eats grape Uncrustables.",
     },
     {
         pattern: /\b(realmuto|jt)\b/i,
@@ -87,7 +91,7 @@ const KEYWORD_REPLIES: { pattern: RegExp; reply: string | ((id: string) => strin
     },
     {
         pattern: /\b(smackdown|wrestling|wwe)\b/i,
-        reply: "Off day tomorrow, I can watch Smackdown, Tom.",
+        reply: "Off day tomorrow? I want to watch Smackdown, Tom.",
     },
     {
         pattern: /\brat.?tail\b/i,
@@ -109,29 +113,30 @@ const KEYWORD_REPLIES: { pattern: RegExp; reply: string | ((id: string) => strin
 ];
 
 const FALLBACK_REPLIES = [
-    "OH MY GOD!",
-    "YEEAAHHH!",
-    "I ain't an athlete, I'm a baseball player, Tom.",
-    "You and I should have a child together, and name him Malachi, Tom.",
-    "I ever tell you about the time we played a prison team, Tom?",
     "He's now batting two thousand, Tom.",
-    "I feel like I have tendinitis in my middle finger after driving from Florida to Philly, Tom.",
-    "There goes the best smelling man in baseball, Tom.",
-    "Isn't JT the receiver, Tom?",
-    "What flavor is white cotton candy, Tom?",
-    "The shin bone is connected to the... Damn that hurts, Tom!",
-    "It takes a village to find the promised land, Tom.",
-    "I hated baseball until someone decided they were going to pay me, Tom.",
-    "Tell you what, these antibiotics are wonderful things, Tom.",
-    "I'm not going to the St. Louis Arch, Tom.",
-    "Sorry. I said that out loud, Tom.",
-    "Why aren't we born with hair on our chests as men, Tom?",
-    "Not a fan of Caillou, Tom.",
-    "I opened my window there was a dang giraffe out there, Tom.",
-    "Her dad came out with a shotgun, trying to shoot us, Tom.",
-    "I left and went home, turned on the game and they were wondering what happened, Tom.",
-    "I'd kiss you if these two mikes weren't in the way, Tom.",
     "He got hit in the balls? Only hurt me half as much, Tom.",
+    "Her dad came out with a shotgun, trying to shoot us, Tom.",
+    "I'd kiss you if these two mikes weren't in the way, Tom.",
+    "I'm not going to the St. Louis Arch, Tom.",
+    "I ain't an athlete, I'm a baseball player, Tom.",
+    "I ever tell you about the time we played a prison team, Tom?",
+    "I feel like I have tendinitis in my middle finger after driving from Florida to Philly, Tom.",
+    "I hated baseball until someone decided they were going to pay me, Tom.",
+    "I left and went home, turned on the game and they were wondering what happened, Tom.",
+    "I opened my window there was a dang giraffe out there, Tom.",
+    "Isn't JT the receiver, Tom?",
+    "It takes a village to find the promised land, Tom.",
+    "Not a fan of Caillou, Tom.",
+    "OH MY GOD!",
+    "Sorry. I said that out loud, Tom.",
+    "Tell you what, these antibiotics are wonderful things, Tom.",
+    "The shin bone is connected to the... Damn that hurts, Tom!",
+    "There goes the best smelling man in baseball, Tom.",
+    "What flavor is white cotton candy, Tom?",
+    "Why aren't we born with hair on our chests as men, Tom?",
+    "YEEAAHHH!",
+    "You and I should have a child together, and name him Malachi, Tom.",
+    "You want me to handle the rest of this inning or what?"
 ];
 
 function pickFallbackReply(commentId: string): string {
