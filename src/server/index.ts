@@ -55,7 +55,7 @@ const KEYWORD_REPLIES: { pattern: RegExp; reply: string | ((id: string) => strin
     },
     {
         pattern: /\b(nola|aaron)\b/i,
-        reply: "He's crack as he is jacked, Tom.",
+        reply: "He's as cracked as he is jacked, Tom.",
     },
     {
         pattern: /\b(ranger|suarez)\b/i,
@@ -90,8 +90,16 @@ const KEYWORD_REPLIES: { pattern: RegExp; reply: string | ((id: string) => strin
         reply: "Off day tomorrow, I can watch Smackdown, Tom.",
     },
     {
-        pattern: /\b(rat.?tail|mullet)\b/i,
+        pattern: /\brat.?tail\b/i,
         reply: "I should grow a rat-tail? What the heck is a rat-tail, Tom?",
+    },
+    {
+        pattern: /\bmullet\b/i,
+        reply: "I miss my mullet, Tom.",
+    },
+    {
+        pattern: /\bgood\sbot\b/i,
+        reply: "Shut up, ump!",
     },
     // Fallback: any mention of Kruk's name
     {
