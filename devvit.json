@@ -1,0 +1,14 @@
+{
+  "name": "krukbot-29",
+  "server": {},
+  "triggers": {
+    "onCommentCreate": "/internal/on-comment-create"
+  },
+  "permissions": {
+    "reddit": true,
+    "redis": true
+  },
+  "dev": {
+    "subreddit": "krukbot_29_dev"
+  }
+}
