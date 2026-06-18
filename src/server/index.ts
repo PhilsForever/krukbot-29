@@ -10,6 +10,12 @@ import type {
 const BOT_DISCLAIMER =
     "\n\n---\n^KrukBot29 ^is ^not ^affiliated ^with ^John ^Kruk ^or ^the ^Phillies";
 
+// Probability (0–1) that the bot replies when a keyword matches
+const REPLY_CHANCE = 0.6;
+
+// How long (ms) to suppress replies in a post after one goes out
+const POST_COOLDOWN_MS = 2 * 60 * 1000;
+
 // Only fire in recognized Phillies game/recap threads
 const GAME_THREAD_REGEX =
     /\b(game\s+day\s+thread|game\s+thread|off\s+day\s+thread|the\s+phillies\s+(fell\s+to|defeated))\b/i;
@@ -244,8 +250,8 @@ async function onCommentCreate(req: IncomingMessage, res: ServerResponse): Promi
         return;
     }
 
-    if (Math.random() > 0.25) {
-        console.log(`[krukbot] ignored: 25% chance roll failed`);
+    if (Math.random() > REPLY_CHANCE) {
+        console.log(`[krukbot] ignored: ${REPLY_CHANCE * 100}% chance roll failed`);
         writeJSON(res, 200, { status: "ignored" } satisfies TriggerResponse);
         return;
     }
@@ -286,7 +292,7 @@ async function onCommentCreate(req: IncomingMessage, res: ServerResponse): Promi
     }
 
     await redis.set(postCooldownKey, "1", {
-        expiration: new Date(Date.now() + 2 * 60 * 1000),
+        expiration: new Date(Date.now() + POST_COOLDOWN_MS),
     });
 
     writeJSON(res, 200, { status: "ok" } satisfies TriggerResponse);
