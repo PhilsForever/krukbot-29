@@ -24,12 +24,20 @@ const GAME_THREAD_REGEX =
 // Add entries here to map found text → specific Kruk reply.
 const KEYWORD_REPLIES: { pattern: RegExp; reply: string | string[] }[] = [
     {
+      pattern: /\b(alvarado|alvy)\b/i,
+      reply: "There goes the best smelling man in baseball, Tom.",
+    },
+    {
         pattern: /\b(analytics|statcast|sabermetric|WAR|xFIP|wRC)\b/i,
         reply: "Analytics can kiss my butt, Tom.",
     },
     {
         pattern: /\b(bacon|burger|steak|food|eat)\b/i,
-        reply: "You could wrap bacon around shoe leather and it would taste good to me, Tom.",
+        reply: [
+            "You could wrap bacon around shoe leather and it would taste good to me, Tom.",
+            "Sure would be nice to get something from Ashburn Alley, Tom.",
+            "If I ever become a vegan, can you punch me in the face as hard as you can, Tom?"
+            ],
     },
     {
         pattern: /\b(bryce|harper)\b/i,
@@ -132,8 +140,8 @@ const KEYWORD_REPLIES: { pattern: RegExp; reply: string | string[] }[] = [
             "OH MY GOD!",
             "Sorry. I said that out loud, Tom.",
             "Tell you what, these antibiotics are wonderful things, Tom.",
+            "The first person that invented the clock... how'd they know what time it was, Tom?",
             "The shin bone is connected to the... Damn that hurts, Tom!",
-            "There goes the best smelling man in baseball, Tom.",
             "What flavor is white cotton candy, Tom?",
             "Why aren't we born with hair on our chests as men, Tom?",
             "YEEAAHHH!",
