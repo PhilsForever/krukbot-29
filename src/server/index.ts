@@ -69,7 +69,7 @@ const KEYWORD_REPLIES: { pattern: RegExp; reply: string | string[] }[] = [
     },
     {
         pattern: /\b(nola|aaron)\b/i,
-        reply: "He's as cracked as he is jacked, Tom.",
+        reply: "Nola's as cracked as he is jacked, Tom.",
     },
     {
         pattern: /\b(nutella|hazelnut)\b/i,
@@ -82,6 +82,10 @@ const KEYWORD_REPLIES: { pattern: RegExp; reply: string | string[] }[] = [
     {
         pattern: /\b(realmuto|jt)\b/i,
         reply: "Best catcher in baseball, Tom.",
+    },
+    {
+        pattern: /\bribs?\b/i,
+        reply: "We aren't eating Zack Wheeler's ribs, are we Tom?",
     },
     {
         pattern: /\b(sanchez|sanchy|cris)\b/i,
@@ -117,7 +121,10 @@ const KEYWORD_REPLIES: { pattern: RegExp; reply: string | string[] }[] = [
     },
     {
         pattern: /\b(wheeler|zack)\b/i,
-        reply: "He's nasty, Tom. Just flat-out nasty.",
+        reply: [
+            "Wheeler's nasty, Tom. Just flat-out nasty.",
+            "Zack Wheeler is the most valuable pitcher in baseball, Tom.",
+        ],
     },
     // Fallback: any mention of Kruk's name
     {
@@ -138,7 +145,7 @@ const KEYWORD_REPLIES: { pattern: RegExp; reply: string | string[] }[] = [
             "It takes a village to find the promised land, Tom.",
             "Not a fan of Caillou, Tom.",
             "OH MY GOD!",
-            "Sorry. I said that out loud, Tom.",
+            "Sorry I said that out loud, Tom.",
             "Tell you what, these antibiotics are wonderful things, Tom.",
             "The first person that invented the clock... how'd they know what time it was, Tom?",
             "The shin bone is connected to the... Damn that hurts, Tom!",
