@@ -41,7 +41,7 @@ const KEYWORD_REPLIES: { pattern: RegExp; reply: string | string[] }[] = [
     },
     {
         pattern: /\b(bryce|harper)\b/i,
-        reply: "He's the best player in baseball, Tom.",
+        reply: "Bryce is the best player in baseball, Tom.",
     },
     {
         pattern: /\b(cheesesteak|cheese\ssteak)\b/i,
@@ -69,7 +69,7 @@ const KEYWORD_REPLIES: { pattern: RegExp; reply: string | string[] }[] = [
     },
     {
         pattern: /\b(nola|aaron)\b/i,
-        reply: "Nola's as cracked as he is jacked, Tom.",
+        reply: "Aaron Nola is as cracked as he is jacked, Tom.",
     },
     {
         pattern: /\b(nutella|hazelnut)\b/i,
@@ -81,7 +81,7 @@ const KEYWORD_REPLIES: { pattern: RegExp; reply: string | string[] }[] = [
     },
     {
         pattern: /\b(realmuto|jt)\b/i,
-        reply: "Best catcher in baseball, Tom.",
+        reply: "Realmuto is the best catcher in baseball, Tom.",
     },
     {
         pattern: /\bribs?\b/i,
@@ -89,11 +89,11 @@ const KEYWORD_REPLIES: { pattern: RegExp; reply: string | string[] }[] = [
     },
     {
         pattern: /\b(sanchez|sanchy|cris)\b/i,
-        reply: "He's old school, Tom. Eats grape Uncrustables.",
+        reply: "Sanchez is old school, Tom. Eats grape Uncrustables.",
     },
     {
         pattern: /\b(schwarber|kyle)\b/i,
-        reply: "He can hit a ball farther than any human being I've ever seen, Tom.",
+        reply: "Schwarbs can hit a ball farther than any human being I've ever seen, Tom.",
     },
     {
         pattern: /\bschwarbomb\b/i,
