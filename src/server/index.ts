@@ -11,7 +11,7 @@ const BOT_DISCLAIMER =
     "\n\n---\n^KrukBot29 ^is ^not ^affiliated ^with ^John ^Kruk ^or ^the ^Phillies";
 
 // How long (ms) to suppress replies in a post after one goes out
-const POST_COOLDOWN_MS = 2 * 60 * 1000;
+const POST_COOLDOWN_MS = 5 * 60 * 1000;
 
 // Only fire in recognized Phillies game/recap threads
 const GAME_THREAD_REGEX =
