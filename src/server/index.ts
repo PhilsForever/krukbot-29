@@ -10,9 +10,6 @@ import type {
 const BOT_DISCLAIMER =
     "\n\n---\n^KrukBot29 ^is ^not ^affiliated ^with ^John ^Kruk ^or ^the ^Phillies";
 
-// Probability (0–1) that the bot replies when a keyword matches
-const REPLY_CHANCE = 0.75;
-
 // How long (ms) to suppress replies in a post after one goes out
 const POST_COOLDOWN_MS = 2 * 60 * 1000;
 
@@ -25,7 +22,10 @@ const GAME_THREAD_REGEX =
 const KEYWORD_REPLIES: { pattern: RegExp; reply: string | string[] }[] = [
     {
       pattern: /\b(alvarado|alvy)\b/i,
-      reply: "There goes the best smelling man in baseball, Tom.",
+      reply: [
+          "There goes the best smelling man in baseball, Tom.",
+          "He can strike out the side, or walk in runs, Tom."
+      ],
     },
     {
         pattern: /\b(analytics|statcast|sabermetric|WAR|xFIP|wRC)\b/i,
@@ -255,12 +255,6 @@ async function onCommentCreate(req: IncomingMessage, res: ServerResponse): Promi
     const replyText = getReply(comment.body);
     if (!replyText) {
         console.log(`[krukbot] ignored: no keyword match — "${comment.body?.slice(0, 80)}"`);
-        writeJSON(res, 200, { status: "ignored" } satisfies TriggerResponse);
-        return;
-    }
-
-    if (Math.random() > REPLY_CHANCE) {
-        console.log(`[krukbot] ignored: ${REPLY_CHANCE * 100}% chance roll failed`);
         writeJSON(res, 200, { status: "ignored" } satisfies TriggerResponse);
         return;
     }
